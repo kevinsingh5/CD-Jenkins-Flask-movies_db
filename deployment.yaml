@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: cc-assignment6-deployment
+  labels:
+    app: cc-assignment6
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: cc-assignment6
+  template:
+    metadata:
+      labels:
+        app: cc-assignment6
+    spec:
+      containers:
+      - name: assignment6
+        image: gcr.io/cc-a5-singh5/assignment6
+        ports:
+        - containerPort: 5000
+        env:
+          - name: "PASSWORD"
+            value: testpass123!@#
+          - name: "DB"
+            value: testdb
+          - name: "HOST"
+            value: 
+          - name: "USER"
+            value: root
