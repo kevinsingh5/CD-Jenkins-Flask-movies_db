@@ -1,0 +1,20 @@
+echo "This is the deploy step"
+
+export PROJECT_ID=cc-assignment6
+gcloud config set project $PROJECT_ID
+export CLOUDSDK_COMPUTE_ZONE=us-central1-b
+
+
+
+gcloud container clusters get-credentials a6-cluster1
+
+kubectl delete deployment cc-assignment6-deployment || echo "cc-assignment6-deployment deployment does not exist"
+kubectl delete service cc-assignment6-deployment || echo "cc-assignment6-deployment service does not exist"
+kubectl delete ingress cc-assignment6-ingress || echo "cc-assignment6-ingress does not exist"
+
+kubectl create -f deployment.yaml
+kubectl expose deployment cc-assignment6-deployment --target-port=5000 --type=NodePort
+
+kubectl apply -f ingress.yaml
+
+echo "Done deploying"

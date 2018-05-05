@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: cc-assignment6-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: cc-assignment6-ip
+spec:
+  backend:
+    serviceName: cc-assignment6-deployment
+servicePort: 5000
