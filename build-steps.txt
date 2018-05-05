@@ -1,6 +1,5 @@
 echo "This is a build step"
 
-cd CICD/greetings
 docker build -t gcr.io/cc-assignment6/assignment6 .
 gcloud docker -- push gcr.io/cc-assignment6/assignment6
 
