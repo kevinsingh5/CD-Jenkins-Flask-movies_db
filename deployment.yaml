@@ -15,8 +15,8 @@ spec:
         app: cc-assignment6
     spec:
       containers:
-      - name: assignment6
-        image: gcr.io/cc-a5-singh5/assignment6
+      - name: assignment6-1
+        image: gcr.io/cc-assignment6/assignment6
         ports:
         - containerPort: 5000
         env:
@@ -25,6 +25,6 @@ spec:
           - name: "DB"
             value: testdb
           - name: "HOST"
-            value: 
+            value: 35.226.150.156
           - name: "USER"
             value: root
