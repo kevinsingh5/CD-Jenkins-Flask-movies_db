@@ -3,5 +3,8 @@ Create a Continuous Deployment (CD) setup for the Flask movie database web app u
 name: Kevin Singh
 eid: ks37843
 bitbucketid: singh5
-url: <Public URL of your application>
-comments: <Comments, if any>
+url: 130.211.11.42
+comments:
+    name of gke instance cluster: a6-cluster1
+    name of sql instance:   instance1
+    
